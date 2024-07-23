@@ -1,5 +1,5 @@
 ---
-title: 'Mastering-Javascript'
+title: 'Mastering Javascript'
 date: '2024-07-23'
 author: 'Luke King'
 image: 'mastering-js-thumb.png'

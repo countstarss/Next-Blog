@@ -28,6 +28,10 @@ body {
   --color-success-100: #a2f0bc;
   --color-success-500: #12bd4b;
 
+
+  --color-pending-100: #1c7dc1;
+  --color-pending-500: #1c7dc1;
+
   --color-error-100: #f1acc9;
   --color-error-500: #a10c4a;
 

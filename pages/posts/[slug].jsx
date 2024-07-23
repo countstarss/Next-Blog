@@ -1,9 +1,15 @@
 // 使用slug，可读性更高
 import PostContent from "@/components/posts/PostDetail/PostContent";
 import { getPostData,getPostsFile } from "@/helper/posts-util";
+import Head from "next/head";
 
 function PostDetailPage(props) {
-    return <PostContent post={props.post}/>
+    return <>
+        <Head>
+            <title>{props.post.title}</title>
+        </Head>
+        <PostContent post={props.post}/>
+    </>
 }
 
 export function getStaticProps(context) {
