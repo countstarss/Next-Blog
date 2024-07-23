@@ -1,9 +1,9 @@
 ---
-title: 'Getting Stared With NextJS'
+title: 'Mastering-Javascript'
 date: '2024-07-23'
-author: 'Lukeking'
-image: 'getting-started-nextjs.png'
-excerpt: 'NextJS is a react framewprk for production 2'
+author: 'Luke King'
+image: 'mastering-js-thumb.png'
+excerpt: 'Mastering Javascript is a great choice！'
 isFeatured: true
 ---
 
@@ -26,5 +26,3 @@ function PostContent(props) {
     </article>
 }
 ```
-
-
