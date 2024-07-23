@@ -1,44 +1,25 @@
 import Hero from "@/components/HomePage/Hero"
 import FeaturedPosts from "@/components/HomePage/FeaturedPosts"
+import { getFeaturedPosts } from "@/helper/posts-util"
 
-const DUMMY_POSTS = [
-  {
-    title:"Getting Started with NextJS",
-    image:'getting-started-nextjs.png',
-    excerpt:'text text text text text',
-    date:'2024-07-22',
-    slug:'getting-started-with-nextjs'
-  },
-  {
-    title:"Getting Started with NextJS 2",
-    image:'getting-started-nextjs.png',
-    excerpt:'text text text text text',
-    date:'2024-07-22',
-    slug:'getting-started-with-nextjs2'
-  },
-  {
-    title:"Getting Started with NextJS 3",
-    image:'getting-started-nextjs.png',
-    excerpt:'text text text text text',
-    date:'2024-07-22',
-    slug:'getting-started-with-nextjs3'
-  },
-  {
-    title:"Getting Started with NextJS 4",
-    image:'getting-started-nextjs.png',
-    excerpt:'text text text text text',
-    date:'2024-07-22',
-    slug:'getting-started-with-nextjs4'
-  },
-  
-]
 
-function HomePaeg() {
+function HomePage(props) {
 
   return <>
       <Hero />
-      <FeaturedPosts posts={DUMMY_POSTS}/>
+      <FeaturedPosts posts={props.posts}/>
   </>
 }
 
-export default HomePaeg
+export function getStaticProps() {
+  const featuredPosts = getFeaturedPosts();
+
+  return {
+    props:{
+      posts:featuredPosts
+    },
+    revalidate:30
+  }
+}
+
+export default HomePage
