@@ -8,7 +8,7 @@ function Hero() {
             <div className={ classes.image }>
                 <Image src='/images/site/Hero.png' alt="hero" width={400} height={400}/>
             </div>
-            <h1>Hi,I'm Luke</h1>
+            <h1>Hi,I&apos;m Luke</h1>
             <p>Web & iOS developer , React , Swift & SwiftUI</p>
         </section>
     )

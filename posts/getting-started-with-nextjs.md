@@ -11,7 +11,7 @@ isFeatured: true
 
 Luke king
 
-``` javascript
+``` js
 function PostContent(props) {
 
     const { post } = props;

@@ -2,8 +2,17 @@ import PostHeader from './PostHeader';
 import classes from './PostContent.module.css';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark,dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import atomDark  from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx'
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
+
+SyntaxHighlighter.registerLanguage('js',js);
+SyntaxHighlighter.registerLanguage('css',css);
+SyntaxHighlighter.registerLanguage('jsx',jsx);
+SyntaxHighlighter.registerLanguage('bash',bash);
 
 function PostContent(props) {
     const { post } = props;
@@ -34,9 +43,10 @@ function PostContent(props) {
                     style={atomDark}
                     language={match[1]}
                     PreTag="div"
-                    children={String(children).replace(/\n$/, '')}
                     {...props}
-                />
+                >
+                    {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
             ) : (
                 <code className={className} {...props}>
                     {children}

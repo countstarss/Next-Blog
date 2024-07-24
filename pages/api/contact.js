@@ -22,9 +22,11 @@ async function handler(req, res) {
     };
 
     let client;
+    const mongodb_uri = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@cluster0.5gvy97r.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
     try {
       client = await MongoClient.connect(
-        // `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.CLUSTER}.uarebit.mongodb.net/${process.env.DB}?retryWrites=true&w=majority`
+        // mongodb_uri
+        // `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@cluster0.5gvy97r.mongodb.net/${process.env.mongodb_database}`
         process.env.MONDODB_URI
       );
     } catch (err) {
