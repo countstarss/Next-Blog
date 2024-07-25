@@ -5,6 +5,7 @@ const nextConfig = (phase) => {
   const isDev = phase === PHASE_DEVELOPMENT_SERVER;
 
   return {
+    output: 'export',
     reactStrictMode: true,
     env: {
       mongodb_username: 'luke',
